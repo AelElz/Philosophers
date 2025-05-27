@@ -4,7 +4,7 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror
 PFLAGS = -pthread
 
-SRC = main.c
+SRC = main.c philo_utils.c
 
 OBJ = $(SRC:.c=.o)
 

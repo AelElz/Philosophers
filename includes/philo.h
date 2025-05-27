@@ -6,7 +6,7 @@
 /*   By: ael-azha <ael-azha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 01:23:24 by ael-azha          #+#    #+#             */
-/*   Updated: 2025/05/27 18:18:42 by ael-azha         ###   ########.fr       */
+/*   Updated: 2025/05/27 21:06:24 by ael-azha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,9 @@
 # include <unistd.h>
 # include <stdio.h>	
 # include <pthread.h>
-# include <signal.h>
-# include <stdlib.h>
 # include <stdbool.h>
-# include "includes/libft.h"
+# include <limits.h>
+# include "utils.h"
 
 # define PHILO_MAX_COUNT 200
 
@@ -62,4 +61,5 @@ typedef struct s_engine
 	t_mutex	meal_lock;
 	t_mutex	write_lock;
 }	t_engine;
+
 #endif

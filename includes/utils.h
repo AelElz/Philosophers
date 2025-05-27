@@ -1,19 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   utils.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ael-azha <ael-azha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/27 17:58:54 by ael-azha          #+#    #+#             */
-/*   Updated: 2025/05/27 18:02:12 by ael-azha         ###   ########.fr       */
+/*   Created: 2025/05/27 20:54:29 by ael-azha          #+#    #+#             */
+/*   Updated: 2025/05/27 22:05:33 by ael-azha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philo.h"
+#ifndef UTILS_H
+# define UTILS_H
 
-void    error_message(char *text, int nb)
-{
-	if (text)
-		prinft("text, %d\n", ft_strlen(text) + 1);
-}
+# include "philo.h"
+
+int	ft_atoi(const char *str);
+int	ft_isdigit_str(char *s);
+
+#endif
