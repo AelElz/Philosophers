@@ -2,6 +2,7 @@ NAME = philo
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
+PFLAGS = -pthread
 
 SRC = main.c
 
@@ -13,7 +14,7 @@ all: $(NAME)
 	$(CC) $(CFLAGS) -c -o $@ $<
 
 $(NAME): $(OBJ)
-		$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+		$(CC) $(CFLAGS) $(PFLAGS) $(OBJ) -o $(NAME)
 clean:
 	@rm -rf $(OBJ)
 

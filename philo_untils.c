@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   philo_untils.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ael-azha <ael-azha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/26 01:23:15 by ael-azha          #+#    #+#             */
-/*   Updated: 2025/05/27 18:12:01 by ael-azha         ###   ########.fr       */
+/*   Created: 2025/05/27 17:56:33 by ael-azha          #+#    #+#             */
+/*   Updated: 2025/05/27 17:56:42 by ael-azha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-int	pars_input(int ac, char **av)
+int	ft_isdigit_str(char *s)
 {
 	int	i;
 
-	if (ac != 5 && ac != 6)
-		return (1);
-}
-
-int main(int ac, char **av)
-{
-	t_shared	shared;
+	i = 0;
+	while (s[i])
+	{
+		if (s[i] < '0' || s[i] > '9')
+			return (0);
+		i++;
+	}
+	return (1);
 }

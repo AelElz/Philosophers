@@ -1,26 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ael-azha <ael-azha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/26 01:23:15 by ael-azha          #+#    #+#             */
-/*   Updated: 2025/05/27 18:12:01 by ael-azha         ###   ########.fr       */
+/*   Created: 2025/05/27 17:58:54 by ael-azha          #+#    #+#             */
+/*   Updated: 2025/05/27 18:02:12 by ael-azha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-int	pars_input(int ac, char **av)
+void    error_message(char *text, int nb)
 {
-	int	i;
-
-	if (ac != 5 && ac != 6)
-		return (1);
-}
-
-int main(int ac, char **av)
-{
-	t_shared	shared;
+	if (text)
+		prinft("text, %d\n", ft_strlen(text) + 1);
 }
