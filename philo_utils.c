@@ -6,24 +6,24 @@
 /*   By: ael-azha <ael-azha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 17:56:33 by ael-azha          #+#    #+#             */
-/*   Updated: 2025/05/27 22:18:10 by ael-azha         ###   ########.fr       */
+/*   Updated: 2025/05/27 23:50:51 by ael-azha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/philo.h"
 
-int	ft_isdigit_str(char *s)
+int     only_digits(char *str)
 {
-	int	i;
+    int	i;
 
 	i = 0;
-	while (s[i])
-	{
-		if (s[i] < '0' || s[i] > '9')
-			return (0);
-		i++;
-	}
-	return (1);
+    while(str[i])
+    {
+        if(str[i] < '0' || str[i] > '9')
+            return (0);
+        i++;
+    }
+    return (1);
 }
 int	ft_atoi(const char *str)
 {
@@ -49,5 +49,3 @@ int	ft_atoi(const char *str)
 	}
 	return (result * sign);
 }
-
-
