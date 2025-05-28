@@ -6,7 +6,7 @@
 /*   By: ael-azha <ael-azha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 01:23:15 by ael-azha          #+#    #+#             */
-/*   Updated: 2025/05/27 23:53:28 by ael-azha         ###   ########.fr       */
+/*   Updated: 2025/05/28 12:02:50 by ael-azha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,6 @@ void	check_input(int ac, char **av)
 	int		i;
 	long	num;
 
-	if (ac != 5 && ac != 6)
-	{
-		printf("Error: write 5 or 6 argument\n");
-		return ;
-	}
 	i = 1;
 	while (i < ac)
 	{
@@ -49,6 +44,7 @@ int main(int ac, char **av)
 	//t_philo		philos[PHILO_MAX_COUNT];
 	//t_mutex		forks[PHILO_MAX_COUNT];
 	//t_engine	engine;
-
+	if (ac != 5 && ac != 6)
+		printf("you should write 5 or 6 argument\n");
 	check_input(ac, av);
 }
