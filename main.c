@@ -6,7 +6,7 @@
 /*   By: ael-azha <ael-azha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 01:23:15 by ael-azha          #+#    #+#             */
-/*   Updated: 2025/05/28 12:02:50 by ael-azha         ###   ########.fr       */
+/*   Updated: 2025/05/28 13:13:53 by ael-azha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,4 +47,5 @@ int main(int ac, char **av)
 	if (ac != 5 && ac != 6)
 		printf("you should write 5 or 6 argument\n");
 	check_input(ac, av);
+	//philosopher(num_of_philo, time_to_die, time_to_eat, time_to_sleep);
 }
