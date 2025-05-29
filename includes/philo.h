@@ -3,28 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   philo.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ael-azha <ael-azha@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ayoub <ayoub@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/26 01:23:24 by ael-azha          #+#    #+#             */
-/*   Updated: 2025/05/27 21:06:24 by ael-azha         ###   ########.fr       */
+/*   Created: 2024/03/15 16:54:52 by dapetros          #+#    #+#             */
+/*   Updated: 2025/05/29 17:54:15 by ayoub            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PHILO_H
 # define PHILO_H
 
-# include <unistd.h>
-# include <stdio.h>	
-# include <pthread.h>
 # include <stdbool.h>
-# include <limits.h>
-# include "utils.h"
+# include <pthread.h>
+
+# define RESET    "\033[0m"
+# define RED      "\033[31m"
+# define GREEN    "\033[32m"
 
 # define PHILO_MAX_COUNT 200
 
-typedef pthread_t				t_id;
-typedef pthread_mutex_t			t_mutex;
-typedef struct s_mutexes		t_timeval;
+typedef pthread_t		t_id;
+typedef pthread_mutex_t	t_mutex;
+typedef struct timeval	t_timeval;
 
 typedef struct s_mutexes
 {
@@ -46,20 +46,20 @@ typedef struct s_times
 typedef struct s_philo
 {
 	int			id;
-	t_times		times;
-	t_mutexes	mustexes;
-	int			must_eat;
 	int			meals_eaten;
 	int			philo_count;
+	int			must_eat;
+	t_times		times;
+	t_mutexes	mutexes;
 	t_id		thread_id;
 }	t_philo;
 
 typedef struct s_engine
 {
-	t_mutex	*forks;
-	t_philo	*philos;
-	t_mutex	meal_lock;
-	t_mutex	write_lock;
+	t_mutex	*forks;//Array of forks(mutexes)
+	t_philo	*philos;//Array of philos(threads)
+	t_mutex	meal_lock;//mutex locked the meal (checking if all philo have eat)
+	t_mutex	write_lock;//mutex write there is locked (printing message)
 }	t_engine;
 
-#endif
+#endif   /* PHILO_H */
