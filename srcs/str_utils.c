@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   str_utils.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayoub <ayoub@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ael-azha <ael-azha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/15 17:03:49 by dapetros          #+#    #+#             */
-/*   Updated: 2025/05/29 14:55:41 by ayoub            ###   ########.fr       */
+/*   Created: 2025/05/31 16:11:56 by ael-azha          #+#    #+#             */
+/*   Updated: 2025/05/31 16:15:10 by ael-azha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,16 +47,35 @@ long	ft_atoi(const char *str)
 	}
 	return (num * sign);
 }
-int	ft_isdigit_str(char *str)
+int	ft_isdigit(int c)
+{
+	if (c >= '0' && c <= '9')
+		return (1);
+	return (0);
+}
+
+int	number_only(char **str)
 {
 	int	i;
+	int	j;
 
-	i = 0;
+	i = 1;
+	j = 0;
 	while (str[i])
 	{
-		if (str[i] < '0' && str[i] > '9')
-			return (0);
+		j = 0;
+		while (str[i][j])
+		{
+			if ((str[i][j] == '-' || str[i][j] == '+') && j == 0)
+			{
+				j++;
+				continue ;
+			}
+			if (!ft_isdigit(str[i][j]))
+				return (1);
+			j++;
+		}
 		i++;
 	}
-	return (1);
+	return (0);
 }

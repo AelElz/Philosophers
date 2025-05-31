@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayoub <ayoub@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ael-azha <ael-azha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/15 16:58:47 by dapetros          #+#    #+#             */
-/*   Updated: 2025/05/29 16:22:30 by ayoub            ###   ########.fr       */
+/*   Created: 2025/05/31 16:12:09 by ael-azha          #+#    #+#             */
+/*   Updated: 2025/05/31 16:25:11 by ael-azha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,29 +16,21 @@
 #include "init.h"
 #include "simulation.h"
 
-void	check_args(int ac, char **av)
+int	check_args(char **av)
 {
-	int		i;
-	long	num;
-
-	i = 0;
-	if (ac < 5 || ac > 6)
-		error_message("[Argument Count ERROR]\n", 1);
-	while (++i < ac)
-	{
-		if (ft_isdigit_str(av[i]))
-		{
-			num = ft_atoi(av[i]);
-			if (i == 1 && (num < 1 || num > PHILO_MAX_COUNT))
-				error_message("[Argument ERROR]\n", 1);
-			else if (i == 5 && (num < 0 || num > INT_MAX))
-				error_message("[Argument ERROR]\n", 1);
-			else if (i != 1 && i != 5 && (num < 1 || num > INT_MAX))
-				error_message("[Argument ERROR]\n", 1);
-		}
-		else
-			error_message("[Argument ERROR]\n", 1);
-	}
+	if (number_only(av))
+		return (1);
+	if (ft_atoi(av[1]) < 1 || ft_atoi(av[1]) > 200)
+		return (1);
+	if (ft_atoi(av[2]) < 60 || ft_atoi(av[2]) > MAX_INT)
+		return (1);
+	if (ft_atoi(av[3]) < 60 || ft_atoi(av[3]) > MAX_INT)
+		return (1);
+	if (ft_atoi(av[4]) < 60 || ft_atoi(av[4]) > MAX_INT)
+		return (1);
+	if (av[5] && (ft_atoi(av[5]) < 0 || ft_atoi(av[5]) > MAX_INT))
+		return (1);
+	return (0);
 }
 
 int	main(int ac, char **av)
@@ -47,7 +39,15 @@ int	main(int ac, char **av)
 	t_mutex		forks[PHILO_MAX_COUNT];
 	t_engine	engine;
 
-	check_args(ac, av);
+	if (ac < 5 || ac > 6)
+	{
+		printf("Error: Wrong number of arguments\n");
+	}
+	else if (check_args(av))
+	{
+		printf("Error wrong argument\n");
+		return (1);
+	}
 	init_engine(&engine, philos, forks);
 	init_forks(&engine, forks, ft_atoi(av[1]));
 	init_philos(&engine, philos, forks, av);

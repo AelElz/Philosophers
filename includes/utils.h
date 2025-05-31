@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayoub <ayoub@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ael-azha <ael-azha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/15 16:56:19 by dapetros          #+#    #+#             */
-/*   Updated: 2025/05/29 14:54:43 by ayoub            ###   ########.fr       */
+/*   Created: 2025/05/31 16:12:36 by ael-azha          #+#    #+#             */
+/*   Updated: 2025/05/31 16:15:48 by ael-azha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ size_t	get_current_time(void);
 void	ft_usleep(size_t mls);
 size_t	ft_strlen(const char *str);
 long	ft_atoi(const char *str);
-int		ft_isdigit_str(char *str);
+int     ft_isdigit(int c);
+int     number_only(char **str);
 
 #endif   /* UTILS_H */

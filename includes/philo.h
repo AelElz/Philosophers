@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philo.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayoub <ayoub@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ael-azha <ael-azha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/15 16:54:52 by dapetros          #+#    #+#             */
-/*   Updated: 2025/05/29 17:54:15 by ayoub            ###   ########.fr       */
+/*   Created: 2025/05/31 16:12:29 by ael-azha          #+#    #+#             */
+/*   Updated: 2025/05/31 16:20:43 by ael-azha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,15 @@
 
 # include <stdbool.h>
 # include <pthread.h>
+# include <stdio.h>
 
 # define RESET    "\033[0m"
 # define RED      "\033[31m"
 # define GREEN    "\033[32m"
 
 # define PHILO_MAX_COUNT 200
+# define MAX_INT 2147483647
+# define MIN_INT -2147483648
 
 typedef pthread_t		t_id;
 typedef pthread_mutex_t	t_mutex;
