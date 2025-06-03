@@ -6,7 +6,7 @@
 /*   By: ael-azha <ael-azha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 16:12:05 by ael-azha          #+#    #+#             */
-/*   Updated: 2025/05/31 16:12:07 by ael-azha         ###   ########.fr       */
+/*   Updated: 2025/06/03 15:58:33 by ael-azha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,9 @@ void	init_philos(t_engine *en, t_philo *philos, t_mutex *forks, char **av)
 		philos[i].philo_count = ft_atoi(av[1]);
 		philos[i].mutexes.left_fork = &forks[i];
 		if (i == 0)
-			philos[i].mutexes.right_fork = &forks[philos[i].philo_count - 1];
+			philos[i].mutexes.right_fork = &forks[philos[i].philo_count - 1];//i == 0 special case 9adina lih fourchitat ta3o
 		else
-			philos[i].mutexes.right_fork = &forks[i - 1];
+			philos[i].mutexes.right_fork = &forks[i - 1];//hna automatic fourchitat t9ado mn i = 1 lfo9
 		philos[i].mutexes.write_lock = &en->write_lock;
 		philos[i].mutexes.meal_lock = &en->meal_lock;
 		i++;

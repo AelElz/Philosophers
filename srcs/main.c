@@ -6,7 +6,7 @@
 /*   By: ael-azha <ael-azha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 16:12:09 by ael-azha          #+#    #+#             */
-/*   Updated: 2025/05/31 16:25:11 by ael-azha         ###   ########.fr       */
+/*   Updated: 2025/06/03 16:26:07 by ael-azha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ int	main(int ac, char **av)
 	if (ac < 5 || ac > 6)
 	{
 		printf("Error: Wrong number of arguments\n");
+		return (1);
 	}
 	else if (check_args(av))
 	{

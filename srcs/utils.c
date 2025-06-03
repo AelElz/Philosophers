@@ -6,7 +6,7 @@
 /*   By: ael-azha <ael-azha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 16:12:20 by ael-azha          #+#    #+#             */
-/*   Updated: 2025/05/31 16:12:22 by ael-azha         ###   ########.fr       */
+/*   Updated: 2025/06/03 16:33:08 by ael-azha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	error_message(char *text, int signal)
 void	destroy_all(t_engine *engine, char *str, int count, int signal)
 {
 	while (--count >= 0)
-		pthread_mutex_destroy(&engine->forks[count]);//in init_engine case it will not execute that while
+		pthread_mutex_destroy(&engine->forks[count]);
 	pthread_mutex_destroy(&engine->write_lock);
 	pthread_mutex_destroy(&engine->meal_lock);
 	error_message(str, signal);
@@ -48,7 +48,7 @@ size_t	get_current_time(void)
 
 	if (gettimeofday(&time, NULL) == -1)
 		error_message("[gettimeofday ERROR]\n", 1);
-	return (time.tv_sec * 1000 + time.tv_usec / 1000);
+	return (time.tv_sec * 1000 + time.tv_usec / 1000);//this part is to convert to millisecond because we just need to work with milliecond
 }
 
 void	ft_usleep(size_t mls)

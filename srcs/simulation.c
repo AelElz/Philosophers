@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ael-azha <ael-azha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/31 16:12:14 by ael-azha          #+#    #+#             */
-/*   Updated: 2025/05/31 16:12:15 by ael-azha         ###   ########.fr       */
+/*   Created: 2025/05/31 17:06:50 by ael-azha          #+#    #+#             */
+/*   Updated: 2025/06/03 16:33:30 by ael-azha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,16 +37,16 @@ int	is_all_eat(t_philo *philos)
 	return (0);
 }
 
-void	*obsorver(void *ptr)
+void	*obsorver(void *ptr)//monitor
 {
 	t_philo	*philos;
 	int		i;
 
 	philos = (t_philo *)ptr;
-	while (true)
+	while (1)
 	{
-		i = -1;
-		while (++i < philos[0].philo_count)
+		i = 0;
+		while (i < philos[0].philo_count)
 		{
 			pthread_mutex_lock(philos->mutexes.meal_lock);
 			if (get_current_time() - philos[i].times.last_meal
@@ -58,6 +58,7 @@ void	*obsorver(void *ptr)
 				return (NULL);
 			}
 			pthread_mutex_unlock(philos->mutexes.meal_lock);
+			i++;
 		}
 		if (is_all_eat(philos))
 			return (NULL);

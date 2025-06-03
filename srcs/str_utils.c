@@ -6,7 +6,7 @@
 /*   By: ael-azha <ael-azha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 16:11:56 by ael-azha          #+#    #+#             */
-/*   Updated: 2025/05/31 16:15:10 by ael-azha         ###   ########.fr       */
+/*   Updated: 2025/06/02 15:58:21 by ael-azha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ long	ft_atoi(const char *str)
 	}
 	return (num * sign);
 }
+
 int	ft_isdigit(int c)
 {
 	if (c >= '0' && c <= '9')
