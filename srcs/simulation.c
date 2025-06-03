@@ -6,7 +6,7 @@
 /*   By: ael-azha <ael-azha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 17:06:50 by ael-azha          #+#    #+#             */
-/*   Updated: 2025/06/03 16:33:30 by ael-azha         ###   ########.fr       */
+/*   Updated: 2025/06/03 17:29:04 by ael-azha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ void	philo_routine(t_philo *philo)
 	print_action(philo, " is thinking");
 }
 
-void	*start_simulation(void *ptr)
+void	*start_simulation(void *ptr)//the function that give birth to the threads
 {
 	t_philo	*philo;
 
@@ -93,8 +93,8 @@ void	*start_simulation(void *ptr)
 	if (philo->id % 2 == 0)
 		ft_usleep(1);
 	pthread_mutex_lock(philo->mutexes.meal_lock);
-	philo->times.born_time = get_current_time();
-	philo->times.last_meal = get_current_time();
+	philo->times.born_time = get_current_time();//initialize there born time
+	philo->times.last_meal = get_current_time();//initialize there last meal time
 	pthread_mutex_unlock(philo->mutexes.meal_lock);
 	while (1)
 		philo_routine(philo);
